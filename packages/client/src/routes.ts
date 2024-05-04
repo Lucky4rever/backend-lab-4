@@ -28,7 +28,6 @@ const routes = {
 type RouteKeys = keyof typeof routes;
 type Route = (typeof routes)[RouteKeys];
 
-
 function getRoute(route: RouteKeys) {
   return routes[route] as Route;
 }
