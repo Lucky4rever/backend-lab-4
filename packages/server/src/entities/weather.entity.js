@@ -1,6 +1,7 @@
 export class WeatherEntity {
-  constructor({ city, overall, pressure, temperature, humidity }) {
+  constructor({ city, name, overall, pressure, temperature, humidity }) {
     this.city = city;
+    this.name = name;
     this.overall = overall;
     this.pressure = pressure;
     this.temperature = temperature;
