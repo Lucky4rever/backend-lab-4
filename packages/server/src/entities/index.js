@@ -1,0 +1,1 @@
+export { WeatherEntity as Weather } from './weather.entity.js';
