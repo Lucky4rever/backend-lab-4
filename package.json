@@ -5,8 +5,10 @@
   "scripts": {
     "configure:hooks": "pnpm i && chmod +x hooks/setup-hooks && pnpm hooks/setup-hooks",
     "start": "pnpm start:client ; pnpm start:server",
-    "start:client": "pnpm run --prefix packages/client start",
-    "start:server": "pnpm run --prefix packages/server start"
+    "start:lab-4-client": "pnpm run --prefix packages/lab4-client start",
+    "start:lab-4-server": "pnpm run --prefix packages/lab4-server start",
+    "start:lab-5-client": "pnpm run --prefix packages/lab5-client start",
+    "start:lab-5-server": "pnpm run --prefix packages/lab5-server start"
   },
   "keywords": [],
   "author": "",
