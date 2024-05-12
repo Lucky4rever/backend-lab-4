@@ -1,4 +1,4 @@
-import { render } from 'lit-html';
+import { render } from 'lit';
 import { getRoute, type RouteKeys } from "./routes";
 import NavbarComponent from '../components/navbar.component';
 
@@ -9,9 +9,10 @@ const renderContent = async (path: string) => {
     const route = getRoute(path as RouteKeys);
 
     document.title = route.linkLabel;
+    
+    route.component(app);
 
     render(NavbarComponent(), document.body);
-    render(route.component(), app);
   } catch (error) {
     throw new Error(`Route '${path}' not found`);
   }

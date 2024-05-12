@@ -1,8 +1,8 @@
 import { v4 as uuidv4 } from 'uuid';
-import { html } from 'lit-html';
+import { html, render } from 'lit';
 import { addNewPost } from '../utils/fetching';
 
-const AddPostPage = () => {
+const AddPostPage = (app: HTMLElement) => {
   let title = '';
   let article = '';
   let author = '';
@@ -22,7 +22,7 @@ const AddPostPage = () => {
     addNewPost(newPost);
   };
 
-  return html`
+  const document = html`
     <section>
       <form @submit=${handleSubmit}>
         <div class="form-box add-page-box">
@@ -57,6 +57,8 @@ const AddPostPage = () => {
       </form>
     </section>
   `;
+
+  return render(document, app);
 };
 
 export default AddPostPage;

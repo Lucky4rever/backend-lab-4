@@ -3,7 +3,7 @@ import Post from "../types/post.type";
 
 async function getAllPosts() {
   const result = await axios.get('http://localhost:4000/posts');
-  return result.data;
+  return result.data as Post[];
 }
 
 function addNewPost(post: Post) {
@@ -11,7 +11,7 @@ function addNewPost(post: Post) {
 }
 
 function removePost(post: Post) {
-  axios.post(`http://localhost:4000/post/delete/:${post.id}`);
+  axios.get(`http://localhost:4000/post/delete/${post.id}`);
 }
 
 export {

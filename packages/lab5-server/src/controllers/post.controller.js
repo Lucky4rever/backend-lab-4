@@ -7,7 +7,7 @@ export class PostController {
 
   async getAllPosts(_, res) {
     try {
-      const result = this.postService.getAllPosts();
+      const result = await this.postService.getAllPosts();
       res.send(result);
     } catch (error) {
       res.status(500).send(error);
@@ -18,7 +18,7 @@ export class PostController {
     const id = req.params.id;
 
     try {
-      const result = this.postService.getPostById(id);
+      const result = await this.postService.getPostById(id);
       res.send(result);
     } catch (error) {
       res.status(500).send(error);
@@ -29,7 +29,7 @@ export class PostController {
     const postData = req.body;
 
     try {
-      const result = this.postService.createPost(postData);
+      const result = await this.postService.createPost(postData);
       res.send(result);
     } catch (error) {
       res.status(500).send(error);
@@ -41,7 +41,7 @@ export class PostController {
     const newData = req.body;
 
     try {
-      const result = this.postService.updatePost(id, newData);
+      const result = await this.postService.updatePost(id, newData);
       res.send(result);
     } catch (error) {
       res.status(500).send(error);
@@ -52,7 +52,7 @@ export class PostController {
     const id = req.params.id;
 
     try {
-      const result = this.postService.deletePost(id);
+      const result = await this.postService.deletePost(id);
       res.send(result);
     } catch (error) {
       res.status(500).send(error);

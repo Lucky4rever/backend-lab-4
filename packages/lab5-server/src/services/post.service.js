@@ -2,7 +2,7 @@ import { Post } from '../models/index.js';
 
 export default class PostService {
   async getPostById(id) {
-    return await Post.findById(id);
+    return await Post.findOne({ id: id });
   }
 
   async createPost(postData) {
@@ -10,11 +10,11 @@ export default class PostService {
   }
 
   async updatePost(id, newData) {
-    return await Post.findByIdAndUpdate(id, newData, { new: true });
+    return await Post.findOneAndUpdate({ id: id }, newData);
   }
 
   async deletePost(id) {
-    return await Post.findByIdAndDelete(id);
+    return await Post.findOneAndDelete({ id: id });
   }
 
   async getAllPosts() {

@@ -1,25 +1,11 @@
-import { MongoClient, ServerApiVersion } from 'mongodb';
+import { connect } from 'mongoose';
 
-const uri = "mongodb+srv://ilovepolsha:JpkRb6UNubWUTaiJ@kpibackendlab5.d4qdufm.mongodb.net/?retryWrites=true&w=majority&appName=KPIBackendLab5";
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
-const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  }
-});
-async function run() {
-  try {
-    // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
-    // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
-  } finally {
-    // Ensures that the client will close when you finish/error
-    await client.close();
-  }
-}
+const uri = "mongodb+srv://ilovepolsha:JpkRb6UNubWUTaiJ@kpibackendlab5.d4qdufm.mongodb.net/Lab5?retryWrites=true&w=majority&appName=KPIBackendLab5";
 
-export default () => run().catch(console.dir);
+export default () => connect(uri)
+  .then(() => {
+    console.log('З\'єднання з MongoDB успішно встановлено');
+  })
+  .catch((error) => {
+    console.error('Помилка під час з\'єднання з MongoDB:', error);
+  });;

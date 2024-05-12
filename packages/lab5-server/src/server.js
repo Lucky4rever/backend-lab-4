@@ -34,11 +34,11 @@ app.post('/test-load', async (req, res) => {
   }
 });
 
-app.get('/post/:id', async (req, res) => await postController.getPostById(req, res));
-app.get('/posts', async (req, res) => await postController.getAllPosts(req, res));
-app.get('/post/create', async (req, res) => await postController.createPost(req, res));
-app.get('/post/update/:id', async (req, res) => await postController.updatePost(req, res));
-app.get('/post/delete/:id', async (req, res) => await postController.deletePost(req, res));
+app.get('/post/:id', postController.getPostById.bind(postController));
+app.get('/posts', postController.getAllPosts.bind(postController));
+app.post('/post/create', postController.createPost.bind(postController));
+app.post('/post/update/:id', postController.updatePost.bind(postController));
+app.get('/post/delete/:id', postController.deletePost.bind(postController));
 
 const port = app.get('port');
 // eslint-disable-next-line no-console
