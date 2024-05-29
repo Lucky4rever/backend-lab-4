@@ -8,7 +8,8 @@
     "start:lab-4-client": "pnpm run --prefix packages/lab4-client start",
     "start:lab-4-server": "pnpm run --prefix packages/lab4-server start",
     "start:lab-5-client": "pnpm run --prefix packages/lab5-client start",
-    "start:lab-5-server": "pnpm run --prefix packages/lab5-server start"
+    "start:lab-5-server": "pnpm run --prefix packages/lab5-server start",
+    "start:lab-6-server": "pnpm run --prefix packages/lab6-server start"
   },
   "keywords": [],
   "author": "",

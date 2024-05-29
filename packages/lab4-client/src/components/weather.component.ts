@@ -1,6 +1,9 @@
-import { Weather as WeatheType } from "../types/weather.type";
+import { Weather as WeatherType } from "../types/weather.type";
+import fetchWeather from "../utils/fetch-weather";
 
-const Weather = (weather: WeatheType) => {
+const WeatherComponent = async (city: string) => {
+  const weather: WeatherType = await fetchWeather(city);
+
   return `
     <div class="container">
       <h1>Weather App KPI</h1>
@@ -17,4 +20,4 @@ const Weather = (weather: WeatheType) => {
   `;
 };
 
-export default Weather;
+export default WeatherComponent;

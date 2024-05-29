@@ -1,27 +1,30 @@
+import HomeComponent from "../components/home.component";
+import WeatherComponent from "../components/weather.component";
+
 const routes = {
   '/': {
     linkLabel: 'Weather Page',
-    content: `This is a Weather Page`
+    component: HomeComponent(),
   },
   '/vinnica': {
     linkLabel: 'Vinnica Page',
-    content: `Vinnica Page`
+    component: WeatherComponent('vinnica'),
   },
   '/kyiv': {
     linkLabel: 'Kyiv Page',
-    content: `Kyiv Page`
+    component: WeatherComponent('kyiv'),
   },
   '/kropyvnytskyi': {
     linkLabel: 'Kropyvnytskyi Page',
-    content: `Kropyvnytskyi Page`
+    component: WeatherComponent('kropyvnytskyi'),
   },
   '/donetsk': {
     linkLabel: 'Donetsk Page',
-    content: `Donetsk Page`
+    component: WeatherComponent('donetsk'),
   },
   '/zhytomyr': {
     linkLabel: 'Zhytomyr Page',
-    content: `Zhytomyr Page`
+    component: WeatherComponent('zhytomyr'),
   },
 } as const;
 

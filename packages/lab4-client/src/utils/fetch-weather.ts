@@ -5,7 +5,7 @@ import getIcon from "./get-icon";
 const apiLink = 'http://localhost:4000/weather';
 
 async function fetchWeather(city: string): Promise<Weather> {
-  const response = await fetch(`${apiLink}?city=${city.substring(1)}`);
+  const response = await fetch(`${apiLink}?city=${city}`);
   const data = await response.json();
   return ({
     city: data.name,
